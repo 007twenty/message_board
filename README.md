@@ -16,7 +16,7 @@
 - SQLite3
 - HTML/CSS
 
-## 安装说明
+## 安装和运行
 
 1. 克隆仓库：
 ```bash
@@ -34,14 +34,10 @@ pip install flask
 python app.py
 ```
 
-应用将在 http://localhost:5000 上运行。
+4. 在浏览器中访问：`http://localhost:5000`
 
-## 使用说明
+## 项目结构
 
-1. 在浏览器中访问 http://localhost:5000
-2. 在表单中填写您的名字和留言内容
-3. 点击提交按钮发布留言
-
-## 许可证
-
-MIT License 
+- `app.py` - 主应用文件
+- `templates/` - HTML 模板目录
+- `messages.db` - SQLite 数据库文件（首次运行时会自动创建） 

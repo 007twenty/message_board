@@ -20,20 +20,14 @@ var/
 .installed.cfg
 *.egg
 
-# Virtual Environment
-venv/
-ENV/
-
-# Database
+# 数据库文件
 *.db
-*.sqlite3
 
 # IDE
-.idea/
 .vscode/
-*.swp
-*.swo
+.idea/
 
-# OS
-.DS_Store
-Thumbs.db 
+# 环境文件
+.env
+venv/
+ENV/ 
