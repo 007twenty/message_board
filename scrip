@@ -1,0 +1,52 @@
+
+<script>
+        // 获取留言数据
+        const messages = {{ messages | map(attribute='2') | list | tojson }};
+        console.log(messages);
+    
+        // 随机生成弹幕
+        function createRandomDanmaku() {
+            if(messages.length === 0) return;
+            
+            const container = document.querySelector('.danmaku-area');
+            const message = messages[Math.floor(Math.random() * messages.length)];
+            
+            const danmaku = document.createElement('div');
+            danmaku.className = 'danmaku';
+            danmaku.style.top = Math.min(Math.random() * (container.offsetHeight - 20), container.offsetHeight - 20) + 'px'; 
+            danmaku.style.animationDuration = (Math.random() * 15 + 5) + 's';
+            danmaku.textContent = message;
+        
+            // 随机颜色
+            const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+            danmaku.style.background = `linear-gradient(45deg, ${randomColor}, ${lightenColor(randomColor, 0.3)})`;
+        
+            // 随机字体大小
+            const randomFontSize = Math.floor(Math.random() * 10) + 12;
+            danmaku.style.fontSize = `${randomFontSize}px`;
+            
+            document.getElementById('danmaku-container').appendChild(danmaku);
+            
+            // 弹幕移出屏幕后移除
+            danmaku.addEventListener('animationend', () => {
+                danmaku.remove();
+            });
+            
+            // 每隔1-3秒创建新弹幕
+            setTimeout(createRandomDanmaku, Math.random() * 2000 + 1000);
+        }
+    
+        // 辅助函数：变亮颜色
+        function lightenColor(color, percent) {
+            const num = parseInt(color.replace(/[^0-9]/g, ''), 10);
+            const amt = Math.round(2.55 * percent);
+            const R = (num >> 16) + amt;
+            const B = ((num >> 8) & 0x00FF) + amt;
+            const G = (num & 0x0000FF) + amt;
+            return `rgb(${R > 255 ? 255 : R < 0 ? 0 : R}, ${B > 255 ? 255 : B < 0 ? 0 : B}, ${G > 255 ? 255 : G < 0 ? 0 : G})`;
+        }
+    
+        // 初始化弹幕
+        // 请确保这里调用了函数
+        createRandomDanmaku();
+    </script>
