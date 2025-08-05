@@ -46,6 +46,5 @@ python app.py
 
 如果此程序帮助了你，请我喝杯咖啡或矿泉水、蜜雪冰城、冰棍、冰淇淋。谢谢。
 
-![支付宝收款码](/alipay.jpg)
+![支付宝收款码](alipay.jpg) ![微信收款码](wexin.png)
 
-![微信收款码](/weixin.png)
