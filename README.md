@@ -1,5 +1,7 @@
 # 留言板应用
-
+<p align="center">  
+  <img src="1.png" width="800" alt="项目截图">  
+</p>  
 这是一个使用 Flask 和 SQLite 构建的简单留言板应用。
 
 ##功能特点
@@ -47,4 +49,5 @@ python app.py
 如果此程序帮助了你，请我喝杯咖啡或矿泉水、蜜雪冰城、冰棍、冰淇淋。谢谢。
 
 ![支付宝收款码](alipay.jpg) ![微信收款码](wexin.png)
+
 
